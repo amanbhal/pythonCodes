@@ -1,0 +1,39 @@
+from os.path import join, isfile
+import os
+
+def growDict(tokDict, fName, fIndex, tPath, sLst, noCol, binary):
+    fileO = open(tPath+fName)
+    line = fileO.readline()
+    while line:
+        lineTokens = line.split()
+        for token in lineTokens:
+            token = token.lower()
+            if token in sLst:
+                pass
+            else:
+                if token in tokDict.keys():
+                    if not binary:
+                        tokDict[token][fIndex] += 1
+                else:
+                    tokDict[token] = zeroButOneList(noCol, fIndex)
+        line = fileO.readline()
+    return tokDict
+
+def getFileList(rPath,sDPath):
+    targetPath = join(rPath, sDPath)
+    fileLst = [f for f in os.listdir( targetPath )\
+                   if isfile( join(targetPath, f) ) ]
+    fileLst.sort()
+    return [fileLst, targetPath]
+
+def getStopList(root):
+    fileO = open(root+"StopWord.txt")
+    fileStr = fileO.read()
+    stopLst = fileStr.split()
+    fileO.close()
+    return stopLst
+
+def zeroButOneList(n, ind):
+    lst = [0] * n
+    lst[ind] = 1
+    return lst

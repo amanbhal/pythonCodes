@@ -1,0 +1,9 @@
+Charging a customer happens in three steps:
+
+1. Create a checkout object to define the payment (amount, etc.) using the /checkout/create 
+call. We'll go over how to use this call in the next exercise.
+
+2. Get the customer’s payment information by sending them to the checkout_uri returned by
+ the /checkout/create call.
+
+3. Send the customer to a confirmation page.

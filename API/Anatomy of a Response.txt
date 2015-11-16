@@ -1,0 +1,9 @@
+The HTTP response structure mirrors that of the HTTP request. It contains:
+
+A response line (line 2), which includes the three-digit HTTP status code;
+
+A header line or lines (line 3), which include further information about the server and its 
+response;
+
+The body (line 5 and line 6), which contains the text message of the response (for example, 
+"404" would have "file not found" in its body).

@@ -1,0 +1,37 @@
+#! /usr/bin/python
+
+from helpers import getStopList, getFileList, growDict
+
+def main():
+    stopLst = getStopList("../Files/")
+    [fLst, tPath] = getFileList("../Files/","sampleDocs/")
+    tokDict = {}
+    for f in fLst:
+        growDict(tokDict, f, fLst.index(f), tPath,\
+                     stopLst, len(fLst), 1)
+    query = queryInput()
+    print query
+    qTokens = query.split()
+    qLen = len(qTokens)
+    count = 0
+    while count < qLen
+
+def queryInput():
+    cont = 1
+    query = ''
+    while cont != 3:
+        term = raw_input("Term\n-> ")
+        if ( not term.isalpha() ) and ( not term.isdigit() ):
+            continue
+        query += term
+        cont = raw_input("And : 1, Or : 2, End : 3\n-> ")
+        if int(cont) == 1:
+            query += ' and '
+        elif int(cont) == 2:
+            query += ' or '
+        else:
+            cont = int(cont)
+    return query
+
+if __name__ == "__main__":
+    main()

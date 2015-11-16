@@ -1,0 +1,19 @@
+In the previous exercises, the user lookup API requires no parameters to be passed in to 
+make the API call. However, some API calls (such as checkout API) require more 
+information from you to complete the API call. Imagine the user API call is like having your 
+wallet--you don't need any credentials to access your money. The checkout API is like 
+visiting the bank to withdraw money--you need to show credentials (such as an ID card) to 
+gain access to your money.
+
+But what do you do when the API does require a parameters to be passed in?
+
+We'll be using the checkout API in this example. The checkout API is used for charging your
+customer. The creation of a checkout object requires parameters, and here we'll show you 
+how to add parameters to your API call.
+
+If you were to look at the documentation for the checkout/create/ API, you'll noticed 4 
+required parameters (accountid, shortdescription, type, and amount).
+
+Lines 9-14 show you how to add these required parameters to your API call. Require 
+parameters mean that these values must always be passed in when you are making that API 
+call.

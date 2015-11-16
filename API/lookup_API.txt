@@ -1,0 +1,25 @@
+Line 3 contains the url where the code will make a HTTP request to. This also specifies 
+which API we're using. In this example, we're using the user API. The user API can be used 
+to create, lookup, modify, and resend confirmation about a certain user. We will be using the 
+"lookup" functionality of the user API.
+
+Line 4 contains the HTTP headers that will be included in the request. They define the 
+operating parameters of an HTTP transaction. They are not related to the WePay API and 
+are a standard protocol in which the servers "talk" to each other.
+
+Line 5 are optional parameters that you will pass to an API to further specify what you 
+need. Some API calls require parameters in order for it to properly work. In the next 
+exercise we'll show you how this works in further details.
+
+Line 9 is using python's urllib2 library to make an HTTP call from your server to WePay's 
+server at the specified url on line 3. The response variable will store anything received from 
+WePay's server after the HTTP call.
+
+The example is broken down for clarification and does NOT work; our API requires special 
+keys/credentials. In the next exercise we'll show you how to put in your API credentials.
+Lines 4-8 The headers are now adjusted to include some HTTP headers. Examine line 7, 
+this is where you would put your access_token. The access token allows you to gain access 
+to your account. It is sort of like a temporary password, so NEVER share it with anyone.
+
+Note the url in line 3 is /user. You can read the full documentation about the /user API and 
+all the optional parameters.
